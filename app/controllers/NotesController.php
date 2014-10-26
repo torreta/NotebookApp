@@ -21,9 +21,16 @@ class NotesController extends \BaseController {
 	 */
 	public function create()
 	{
+
 		return View::make('notes.create');
 	}
+	public function create_new()
+	{
+		
+		$notes = Note::all();
 
+		return View::make('notes.index', compact('notes'));
+	}
 	/**
 	 * Store a newly created note in storage.
 	 *

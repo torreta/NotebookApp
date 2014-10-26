@@ -6,8 +6,9 @@
 	
 	<ul>
 	@foreach ($notes as $index => $note)
-		<li>{{ $note->tittle }}</li>
+		<li><a href="/{{$index+1}}">{{ $note->tittle }}</a></li>
 	@endforeach
 	</ul>
 
+	<a href="new"> Nueva Nota</a>
  @stop

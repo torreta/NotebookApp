@@ -10,6 +10,10 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-Route::get('/', 'NotesController@index');	
+//Route::get('/', 'NotesController@index');
+Route::get('/', 'NotesController@index');
 Route::get('/{id}', 'NotesController@show');
+Route::get('new', 'NotesController@create');
+//Route::get( 'notes/new', array('as'=> 'new_notes','uses'=>'notes@new'));
+
+

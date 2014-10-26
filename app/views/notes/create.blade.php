@@ -1,1 +1,8 @@
-/home/torretalnx/Desktop/Zod/app/views/notes/create.blade.php
+ @extends('aplication')
+
+ @section('content')
+
+	<h1>Create:</h1>
+
+
+ @stop
