@@ -9,5 +9,6 @@
 		<li>{{ $note->body }}</li>
 		<li>{{ $note->status }}</li>
 	</ul>
-
+		<a href="/notes/{{$note->id}}/edit"> Editar nota</a>
+		<a href="/notes/{{$note->id}}" method="DELETE"> Borrar nota</a>
  @stop
