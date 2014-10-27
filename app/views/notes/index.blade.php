@@ -25,7 +25,7 @@
 
 		          <td>{{ $note->status }}</td>
 
-		          <td><a href="/notes/{{$index+1}}" class:'btn btn-mini'> mostrar </td>
+		          <td><a href="/notes/{{$note->id}}" class:'btn btn-mini'> mostrar </td>
 		        </tr>
 		        @endforeach
 		      </tbody>
