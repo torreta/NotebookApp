@@ -11,9 +11,12 @@
 |
 */
 //Route::get('/', 'NotesController@index');
+
+// Endpoints first
 Route::get('/', 'NotesController@index');
+Route::get('/create', 'NotesController@create');
+
+// With parameters later
 Route::get('/{id}', 'NotesController@show');
 Route::get('/{id}/edit', 'NotesController@edit');
 //Route::get( 'notes/new', array('as'=> 'new_notes','uses'=>'notes@new'));
-
-Route::get('/new', 'NotesController@create_new');
