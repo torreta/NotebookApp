@@ -8,6 +8,7 @@
 		<li>{{ $note->tittle }}</li>
 		<li>{{ $note->body }}</li>
 		<li>{{ $note->status }}</li>
+		
 	</ul>
 		<a href="/notes/{{$note->id}}/edit"> Editar nota</a>
 		<br>

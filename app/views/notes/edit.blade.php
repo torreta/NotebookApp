@@ -19,10 +19,7 @@
 	<div>
 
 		{{	Form::label('status','status:')	}}
-		{{Form::select('status', array(
-		    'pending' => array('Pending' => 'Pending'),
-		    'done' => array('Done' => 'Done'),
-		));}}
+	{{Form::select('status', array('Pending' => 'Pending', 'Done' => 'Done'), 'Pending');}}
 	</div>
 	<br>
 	<div>{{ Form::submit('Save Changes')}}</div>
