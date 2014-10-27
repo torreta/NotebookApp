@@ -46,14 +46,30 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                @if(Session::has('message'))
-                <div class="alert-box success">
-                    <h2>{{ Session::get('message') }}</h2>
-                    {{Session::forget('message')}}
-                </div>
+               @if(Session::has('notice'))
+                  <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <p>{{ Session::get('notice') }}</p>
+                    {{Session::forget('notice')}}
+                  </div>
+                @endif
+                @if(Session::has('error'))
+                  <div class="alert alert-error">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                     <p>{{ Session::get('error') }}</p>
+                    {{Session::forget('error')}}
+                  </div>
+                @endif
+                @if(Session::has('alert'))
+                  <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <p>{{ Session::get('alert') }}</p>
+                    {{Session::forget('alert')}}
+                  </div>
                 @endif
             </div>
         </div>
+
     </div>
     @yield('content')
 </div>
