@@ -4,7 +4,6 @@
 
 	<h1>crear nueva tarea:</h1>
 	{{Form::open(array('route' => array('notes.update', $note->id)))}}
-	<!-- {{ Form::open(['route'=>'notes.update',$note->id])}} -->
 	<div>
 		{{	Form::label('tittle','Tittle:')	}}
 		{{ Form::text('tittle', $note->tittle)}}

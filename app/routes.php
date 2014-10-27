@@ -23,5 +23,13 @@
 // Route::post('/','NotesController@store');
 
 Route::get('/', 'NotesController@index');
+Route::get('login', 'SessionsController@create');
+Route::get('logout', 'SessionsController@destroy');
+
 Route::resource('notes','NotesController');
 Route::resource('sessions','SessionsController');
+
+Route::get('admin',function()
+{
+	return 'admin PAGE!!';
+})->before('auth');
