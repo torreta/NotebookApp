@@ -11,7 +11,8 @@
 		<br>
 		<h3> Estado: {{ $note->status }}</h3>
 		<br>
-	
+		
+		
 		<a href="/notes/{{$note->id}}/edit"> Editar nota</a>
 		<br>
 

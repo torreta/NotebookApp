@@ -2,7 +2,7 @@
 
  @section('content')
 
-	<h1>crear nueva tarea:</h1>
+	<h1>Editar tarea:</h1>
 	
 	{{Form::open(array('action' => array('NotesController@update', $note->id),
 	 'method' => 'put' ));}}
@@ -11,9 +11,11 @@
 		{{ Form::text('tittle', $note->tittle)}}
 	</div>
 		<br>
+		{{ Form::label('body','Descripcion:')	}}
 	<div>
-		{{	Form::label('body','body:')	}}
-		{{ Form::input('text','body',$note->body)}}
+		
+		{{ Form::textarea('body',$note->body)}}
+		
 	</div>
 		<br>
 	<div>
