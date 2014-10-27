@@ -105,17 +105,19 @@ class NotesController extends \BaseController {
 		return Redirect::route('notes.index');
 	}
 
-	// public function marcar($id)
-	// {
-	// 	$note = Note::findOrFail($id);
+	public function marcar($id)
+	{
+		$note = Note::findOrFail($id);
 
-	// 	if(($note->status)=='Done'){
+		if(($note->status)=='Done'){
 
-	// 		$note
-	// 	}
+			$note->status = 'Pending';
+		}else{
+			$note->status = 'Done';
+		}
 
-	// 	$note->update($data);
+		$note->save();
 
-	// 	return Redirect::route('notes.index');
-	// }
+		return Redirect::route('notes.index');
+	}
 }

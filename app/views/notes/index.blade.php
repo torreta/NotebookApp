@@ -26,6 +26,11 @@
 		          <td>{{ $note->status }}</td>
 
 		          <td><a href="/notes/{{$note->id}}" class:'btn btn-mini'> mostrar </td>
+					@if ( $note->status == 'Done')
+		           		<td><a href="/notes/marcar/{{$note->id}}" class:'btn btn-mini'> Desmarcar </td>
+					@else
+						<td><a href="/notes/marcar/{{$note->id}}" class:'btn btn-mini'> Marcar </td>
+					@endif
 		        </tr>
 		        @endforeach
 		      </tbody>

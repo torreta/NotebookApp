@@ -43,3 +43,5 @@ Route::get('creategente',function()
 
 	return Redirect::route('notes.index');
 });
+
+Route::get('notes/marcar/{id}','NotesController@marcar');
