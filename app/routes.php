@@ -23,25 +23,39 @@
 // Route::post('/','NotesController@store');
 
 Route::get('/', 'NotesController@index');
+
+Route::resource('notes','NotesController');
+
+Route::get('notes/marcar/{id}','NotesController@marcar');
+
+
+
+Route::resource('sessions','SessionsController');
+
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
 
-Route::resource('notes','NotesController');
-Route::resource('sessions','SessionsController');
+
+
 
 Route::get('admin',function()
 {
 	return 'admin PAGE!!';
 })->before('auth');
 
+
 Route::get('creategente',function()
 {
-	User::create([
-		'email'=>'correox@gmail.com',
-		'password'=>Hash::make('12345')
-	]);
+	$user = User::findOrFail(1);
+	
+	if($user->email == 'correox@gmail.com'){
+		return Redirect::route('notes.index');		
+	}else{
+		User::create([
+			'email'=>'correox@gmail.com',
+			'password'=>Hash::make('12345')
+		]);
+	}		
 
 	return Redirect::route('notes.index');
 });
-
-Route::get('notes/marcar/{id}','NotesController@marcar');
