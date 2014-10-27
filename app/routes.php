@@ -24,3 +24,4 @@
 
 Route::get('/', 'NotesController@index');
 Route::resource('notes','NotesController');
+Route::resource('sessions','SessionsController');
