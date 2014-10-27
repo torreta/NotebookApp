@@ -30,10 +30,10 @@
                     <ul class="nav navbar-nav navbar-right">
                         @if (Auth::check())
                         <li><a href="/logout">Log Out</a></li>
-                        <li><a href="/profile">{{ Auth::user()->first_name }}</a></li>
+                        <li><a href="#">{{ Auth::user()->email }}</a></li>
                         @else
                         <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Sign Up</a></li>
+                        <li><a href="/creategente">Sign Up</a></li>
                         @endif
                     </ul>
 

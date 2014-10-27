@@ -4,26 +4,33 @@
 
 	<h1>crear nueva tarea:</h1>
 
-	{{ Form::open(['route'=>'notes.store'])}}
-	<div>
-		{{	Form::label('tittle','Tittle:')	}}
-		{{ Form::text('tittle')}}
-		{{$errors->first('tittle')}}
-	</div>
-		<br>
-	<div>
-		{{	Form::label('body','body:')	}}
-		{{ Form::input('text','body')}}
-		{{$errors->first('body')}}
-	</div>
-		<br>
-	<div>
-		{{	Form::label('status','status:')	}}
-		{{ Form::input('text','status')}}
-		{{$errors->first('status')}}
-	</div>
-	<br>
-	<div>{{ Form::submit('Create Note')}}</div>
+	 <div class="row" class="align-center">
+	  {{ Form::open(['route'=>'notes.store'])}}
+	   <div class="control-group">
+	   	<p class: 'control-label'>{{Form::label('tittle','Tittle:')	}}	</p>
+	     <div class="controls">
+			{{ Form::text('tittle')}}
+	      </div>
+	      {{$errors->first('tittle')}}
+	    </div>
+	    <div class="control-group">
+	     <p class: 'control-label'>{{	Form::label('body','body:')	}}</p>
+	      <div class="controls">
+	        {{ Form::input('text','body')}}
+	      </div>
+	      {{$errors->first('body')}}
+	    </div>
+	    <div class="control-group">
+	      <p class: 'control-label'>{{	Form::label('status','status:')	}}</p>
+	      <div class="controls">
+	        {{ Form::input('text','status')}}
+	      </div>
+	    </div>
+	    <div class="control-group">
+	      <div class="controls">
+	      	<p  class: 'btn btn-default'>{{ Form::submit('Create Note')}}</p>     
+	      </div>
+	    </div>
 	{{ Form::close()}}
-	
+	</div>
  @stop

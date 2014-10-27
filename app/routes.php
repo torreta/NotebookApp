@@ -41,5 +41,5 @@ Route::get('creategente',function()
 		'password'=>Hash::make('12345')
 	]);
 
-	return 'Done';
+	return Redirect::route('notes.index');
 });
