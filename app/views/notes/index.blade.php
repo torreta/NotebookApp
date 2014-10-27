@@ -5,7 +5,7 @@
 	
 	
 	<h1>Pendientes por hacer:</h1>
-	@if($notes->count())
+
 
 		 <div class="media">
 		  <div class="media-body">
@@ -41,9 +41,7 @@
 		    </table>
 		  </div>
 		</div>
-	@else
-		<p>yay! no hay nada pendiente!</p>
-	@endif
+
 
 
 	<a href="/notes/create" class:'btn btn-mini'> Nueva Nota</a>

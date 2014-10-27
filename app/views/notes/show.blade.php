@@ -2,14 +2,16 @@
 
  @section('content')
 
-	<h1>Pendientes por hacer:</h1>
+	<h1>Detalles de la nota:</h1>
 	
-	<ul>	
-		<li>{{ $note->tittle }}</li>
-		<li>{{ $note->body }}</li>
-		<li>{{ $note->status }}</li>
-		
-	</ul>
+
+		<h3>Titulo: {{ $note->tittle }}</h3>
+		<br>
+		<h3>Descripcion: {{ $note->body }}</h3>
+		<br>
+		<h3> Estado: {{ $note->status }}</h3>
+		<br>
+	
 		<a href="/notes/{{$note->id}}/edit"> Editar nota</a>
 		<br>
 

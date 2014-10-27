@@ -9,9 +9,16 @@ class NotesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$notes = Note::all();
+		
 
-		return View::make('notes.index', compact('notes'));
+		  $notes_pending = Note::where('status','Pending')->orderBy('created_at', 'desc')->lists('id');
+		  $notes_done = Note::where('status','Done')->orderBy('created_at', 'desc')->lists('id');
+		
+		  $notes_ids= array_unique(array_merge($notes_pending, $notes_done));
+		
+		  $notes = DB::table('notes')->whereIn('id', $notes_ids)->orderBy('status','desc')->get();
+		
+			return View::make('notes.index', compact('notes'));
 	}
 
 	/**
