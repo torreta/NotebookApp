@@ -48,6 +48,8 @@ class NotesController extends \BaseController {
 
 		Note::create($data);
 
+		Session::flash('message', 'Su nota se ha creado con exito!!');
+
 		return Redirect::route('notes.index');
 	}
 

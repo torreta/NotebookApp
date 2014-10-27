@@ -49,6 +49,7 @@
                 @if(Session::has('message'))
                 <div class="alert-box success">
                     <h2>{{ Session::get('message') }}</h2>
+                    {{Session::forget('message')}}
                 </div>
                 @endif
             </div>
