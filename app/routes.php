@@ -49,12 +49,16 @@ Route::get('creategente',function()
 	$user = User::findOrFail(1);
 	
 	if($user->email == 'correox@gmail.com'){
+
+		Session::flash('error', 'El usuario ya estaba creado!');
+		
 		return Redirect::route('notes.index');		
 	}else{
 		User::create([
 			'email'=>'correox@gmail.com',
 			'password'=>Hash::make('12345')
 		]);
+		Session::flash('notice', 'El usuario por defecto fue creado con exito!');
 	}		
 
 	return Redirect::route('notes.index');

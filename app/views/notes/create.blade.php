@@ -5,7 +5,7 @@
 	
 	{{ Form::open(['route'=>'notes.store'])}}
 	<div>
-		{{	Form::label('tittle','Tittle:')	}}
+		{{	Form::label('tittle','Titulo:')	}}
 		{{ Form::text('tittle')}}
 	</div>
 		<br>
@@ -18,7 +18,7 @@
 		<br>
 	<div>
 
-	{{	Form::label('status','status:')	}}
+	{{	Form::label('status','Estado:')	}}
 	{{Form::select('status', array('Pending' => 'Pending', 'Done' => 'Done'), 'Pending');}}
 	</div>
 	<br>

@@ -43,6 +43,8 @@ class NotesController extends \BaseController {
 
 		if ($validator->fails())
 		{
+			Session::flash('error', 'los datos no son validos, intente de nuevo');
+
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
@@ -97,7 +99,9 @@ class NotesController extends \BaseController {
 		}
 
 		$note->update($data);
-
+		
+		Session::flash('notice', 'Su nota se ha actualizado con exito.');
+		
 		return Redirect::route('notes.index');
 	}
 
@@ -111,6 +115,8 @@ class NotesController extends \BaseController {
 	{
 		Note::destroy($id);
 
+		Session::flash('notice', 'Su nota se ha destuido con exito!!');
+
 		return Redirect::route('notes.index');
 	}
 
@@ -121,11 +127,15 @@ class NotesController extends \BaseController {
 		if(($note->status)=='Done'){
 
 			$note->status = 'Pending';
+			Session::flash('notice', 'Su nota se ha desmarcado con exito');
 		}else{
 			$note->status = 'Done';
+			Session::flash('notice', 'Su nota se ha marcado con exito!!');
 		}
 
 		$note->save();
+
+		
 
 		return Redirect::route('notes.index');
 	}

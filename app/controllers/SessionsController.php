@@ -27,11 +27,13 @@ class SessionsController extends \BaseController {
 
 			Auth::user();
 
-			$message = 'Ahora estas logueado señor XD';
+			Session::flash('alert', 'usted ya se encontraba autenticado');
 
-			return Redirect::route('notes.index',compact('message'));
+			return Redirect::route('notes.index');
 		}
-	
+		
+		Session::flash('error', 'Usuario o contraseña invalidos.');
+		
 		return Redirect::back()->withInput();
 		//	return Redirect::route('sessions.create');
 	}

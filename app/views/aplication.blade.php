@@ -45,7 +45,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            
                @if(Session::has('notice'))
                   <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -67,7 +67,7 @@
                     {{Session::forget('alert')}}
                   </div>
                 @endif
-            </div>
+            
         </div>
 
     </div>
