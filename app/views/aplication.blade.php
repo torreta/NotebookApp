@@ -8,6 +8,8 @@
     <style>
         body{
             padding-top: 70px;
+            margin-left: 70px;
+            margin-right: 70px;
         }
     </style>
 </head>

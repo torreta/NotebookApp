@@ -15,7 +15,7 @@
 		{{ Form::password('password') }}
 	</div>
 	<br>
-	<div>{{ Form::submit('Login')}}</div>
+	{{Form::submit('Login', array('class' => 'btn btn-primary'))}}
 	{{ Form::close()}}
 	
  @stop
