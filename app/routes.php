@@ -33,3 +33,13 @@ Route::get('admin',function()
 {
 	return 'admin PAGE!!';
 })->before('auth');
+
+Route::get('creategente',function()
+{
+	User::create([
+		'email'=>'correox@gmail.com',
+		'password'=>Hash::make('12345')
+	]);
+
+	return 'Done';
+});

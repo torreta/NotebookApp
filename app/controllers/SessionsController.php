@@ -2,18 +2,18 @@
 
 class SessionsController extends \BaseController {
 
-		public function create()
+	public function create()
 	{
 		if (Auth::check()){
 
-			return 'ya tabas logueado';//notes.index
+			return Redirect::route('notes.index');
 		}
 
 		return View::make('sessions.create');
 	}
 
 
-		public function destroy()
+	public function destroy()
 	{
 	
 		Auth::logout();
@@ -25,8 +25,11 @@ class SessionsController extends \BaseController {
 	{
 		if(Auth::attempt(Input::only('email','password'))){
 
-			return Auth::user();
+			Auth::user();
 
+			$message = 'Ahora estas logueado señor XD';
+
+			return Redirect::route('notes.index',compact('message'));
 		}
 	
 		return Redirect::back()->withInput();
