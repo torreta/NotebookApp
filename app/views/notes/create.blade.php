@@ -2,7 +2,7 @@
 
  @section('content')
 
-	<h1>Create:</h1>
+	<h1>crear por hacer:</h1>
 
 
  @stop

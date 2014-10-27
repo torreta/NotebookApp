@@ -13,7 +13,7 @@
 //Route::get('/', 'NotesController@index');
 Route::get('/', 'NotesController@index');
 Route::get('/{id}', 'NotesController@show');
-Route::get('new', 'NotesController@create');
+Route::get('/{id}/edit', 'NotesController@edit');
 //Route::get( 'notes/new', array('as'=> 'new_notes','uses'=>'notes@new'));
 
-
+Route::get('/new', 'NotesController@create_new');
