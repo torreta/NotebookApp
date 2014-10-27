@@ -16,22 +16,5 @@ class Note extends \Eloquent {
 	// Don't forget to fill this array
 	protected $fillable = ['tittle','body','status'];
 
-	public function isValid($data)
-	{
-
-		$validation = validator::make($data,static::$rules);
-
-
-		if $validation->passes(){
-			return true;
-		}
-
-		static::$messages = $validation->messages();
-
-		return false;
-
-
-
-	}
 
 }

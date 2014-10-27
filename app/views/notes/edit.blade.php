@@ -3,7 +3,8 @@
  @section('content')
 
 	<h1>crear nueva tarea:</h1>
-	{{Form::open(array('route' => array('notes.update', $note->id)))}}
+	
+	{{Form::open(array('action' => array('NotesController@update', $note->id), 'method' => 'put' ));}}
 	<div>
 		{{	Form::label('tittle','Tittle:')	}}
 		{{ Form::text('tittle', $note->tittle)}}
