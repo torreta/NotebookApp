@@ -17,11 +17,15 @@
 	</div>
 		<br>
 	<div>
+
 		{{	Form::label('status','status:')	}}
-		{{ Form::input('text','status',$note->status)}}
+		{{Form::select('status', array(
+		    'pending' => array('Pending' => 'Pending'),
+		    'done' => array('Done' => 'Done'),
+		));}}
 	</div>
 	<br>
-	<div>{{ Form::submit('Edit Note')}}</div>
+	<div>{{ Form::submit('Save Changes')}}</div>
 	{{ Form::close()}}
 	
  @stop

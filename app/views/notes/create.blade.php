@@ -34,7 +34,10 @@
 
 		{{	Form::label('status','status:')	}}
 
-		{{ Form::input('text','status')}}
+		{{Form::select('status', array(
+		    'pending' => array('Pending' => 'pending'),
+		    'done' => array('Done' => 'Done'),
+		));}}
 
 		{{$errors->first('status')}}
 
