@@ -9,8 +9,6 @@ class NotesController extends \BaseController {
 	 */
 	public function index()
 	{
-		
-
 		  $notes_pending = Note::where('status','Pending')->orderBy('created_at', 'desc')->lists('id');
 		  $notes_done = Note::where('status','Done')->orderBy('created_at', 'desc')->lists('id');
 		
