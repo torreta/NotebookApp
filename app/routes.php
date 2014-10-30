@@ -46,7 +46,19 @@ Route::get('admin',function()
 
 Route::get('creategente',function()
 {
-	$user = User::findOrFail(1);
+
+	$id = 1;
+
+	try
+	{
+	    $user = User::findOrFail($id);
+	}
+	// catch(Exception $e) catch any exception
+	catch(ModelNotFoundException $e)
+	{
+	    dd(get_class_methods($e)) // lists all available methods for exception object
+	    dd($e)
+	}
 	
 	if($user->email == 'correox@gmail.com'){
 
