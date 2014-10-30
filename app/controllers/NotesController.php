@@ -15,7 +15,7 @@ class NotesController extends BaseController {
 		  // $notes_ids= array_unique(array_merge($notes_pending, $notes_done));
 		
 		  // $notes = DB::table('notes')->whereIn('id', $notes_ids)->orderBy('status','desc')->get();
-			notes = Note::all();
+			$notes = Note::all();
 			return View::make('notes.index', compact('notes'));
 	}
 
