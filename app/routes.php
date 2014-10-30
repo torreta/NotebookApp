@@ -55,9 +55,12 @@ Route::get('creategente',function()
 	}
 	// catch(Exception $e) catch any exception
 	catch(ModelNotFoundException $e)
-	{
-	    dd(get_class_methods($e)) // lists all available methods for exception object
-	    dd($e)
+	{		
+		User::create([
+			'email'=>'correox@gmail.com',
+			'password'=>Hash::make('12345')
+		]);
+		Session::flash('notice', 'El usuario por defecto fue creado con exito!');
 	}
 	
 	if($user->email == 'correox@gmail.com'){
