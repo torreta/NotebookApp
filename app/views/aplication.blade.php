@@ -35,7 +35,7 @@
                         <li><a href="#">{{ Auth::user()->email }}</a></li>
                         @else
                         <li><a href="/login">Login</a></li>
-                        <li><a href="/creategente">Sign Up</a></li>
+                        <!-- <li><a href="/creategente">Sign Up</a></li> -->
                         @endif
                     </ul>
 
