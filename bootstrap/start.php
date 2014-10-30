@@ -71,3 +71,7 @@ require $framework.'/Illuminate/Foundation/start.php';
 */
 
 return $app;
+
+$env = $app->detectEnvironment(function() {
+    return getenv('APP_ENV') ?: 'local';
+});
